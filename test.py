@@ -1,10 +1,11 @@
+import numpy as np
+import numpy.typing as npt
 from dataclasses import dataclass
+from typing import List
 
-@dataclass
 class Foo:
-    name: str
+    def foo(self, z: List[float]) -> List[npt.NDArray[np.float64]]:
+        return [np.array(z)]
 
-
-NAMES = [
-        Foo(name="bar")
-]
+foo = Foo()
+print(foo.foo([1.0]))
